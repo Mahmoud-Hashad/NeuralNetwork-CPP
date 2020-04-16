@@ -35,8 +35,10 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/matrix.h" />
+		<Unit filename="include/nn.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/matrix.cpp" />
+		<Unit filename="src/nn.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

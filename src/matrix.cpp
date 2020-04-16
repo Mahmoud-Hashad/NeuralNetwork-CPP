@@ -1,6 +1,6 @@
 #include "matrix.h"
 #include <iostream>
-#include <random>
+#include<time.h>
 using namespace std;
 
 
@@ -10,9 +10,6 @@ matrix::matrix(unsigned int rows, unsigned int cols)
   this->rows = rows;
   this->cols = cols;
   this->data.resize(rows, vector<double>(cols, 0));
-  /*for(unsigned int i = 0; i < rows; i++) {
-    data[i] = vector<double>(cols, 0);
-  }*/
 }
 
 matrix* matrix::copy() {
@@ -33,6 +30,8 @@ matrix* matrix::fromArray(vector<double> *arr) {
   return temp;
 }
 
+
+// Return a new Matrix a-b
 matrix* matrix::subtract(matrix *a, matrix *b) {
   if(a->rows != b->rows || a->cols != b->cols) {
      throw std::invalid_argument( "Columns and Rows of A must match Columns and Rows of B.");
@@ -63,12 +62,11 @@ vector<double>* matrix::toArray() {
 
 
 matrix* matrix::randomize() {
-  default_random_engine generator;
-  uniform_real_distribution<double> distribution(-1,1);
+  srand(time(NULL));
 
   for(unsigned int i = 0; i < this->rows; i++) {
     for(unsigned int j = 0; j < this->cols; j++) {
-      this->data[i][j] = distribution(generator);
+      this->data[i][j] = ((double) rand() / (RAND_MAX)) * 2 - 1;
     }
   }
 
@@ -165,13 +163,7 @@ matrix* matrix::multiply(double m) {
 
 
 
-
-
-
-
-
-
-// map functions
+// Apply a function to every element of matrix
 matrix* matrix::map(double (*fun)(double, unsigned int, unsigned int)) {
   for(unsigned int i = 0; i < this->rows; i++) {
     for(unsigned int j = 0; j < this->cols; j++) {
@@ -183,7 +175,7 @@ matrix* matrix::map(double (*fun)(double, unsigned int, unsigned int)) {
   return this;
 }
 
-
+// Return new matrix after apply a function to every element of matrix "m"
 matrix* matrix::map(matrix* m, double (*fun)(double, unsigned int, unsigned int)) {
   matrix* temp = new matrix(m->rows, m->cols);
   for(unsigned int i = 0; i < temp->rows; i++) {
@@ -199,14 +191,11 @@ matrix* matrix::map(matrix* m, double (*fun)(double, unsigned int, unsigned int)
 
 
 matrix::~matrix() {
-  for(unsigned int i; i < this->rows; i++) {
-    //this.data;
-  }
+  vector<vector<double> >().swap(this->data);
 }
 
 
 
-// print
 void matrix::print() {
   for(unsigned int i = 0; i < rows; i++) {
     for(unsigned int j = 0; j < cols; j++) {

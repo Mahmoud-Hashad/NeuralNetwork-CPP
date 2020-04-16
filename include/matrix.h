@@ -26,10 +26,6 @@ public:
   matrix* multiply(double m);
 
 
-
-
-
-  // map functions
   matrix* map(double (*fun)(double, unsigned int, unsigned int));
   static matrix* map(matrix* m, double (*fun)(double, unsigned int, unsigned int));
 
