@@ -16,7 +16,7 @@ private:
   matrix* bias_h = nullptr;
   matrix* bias_o = nullptr;
 public:
-  NeuralNetwork(unsigned int in_nodes,unsigned int hid_nodes, unsigned int out_nodes, double learning_rate);
+  NeuralNetwork(unsigned int in_nodes,unsigned int hid_nodes, unsigned int out_nodes);
   NeuralNetwork(NeuralNetwork* n);
   vector<double>* predict(vector<double>* input_array);
   void train(vector<double>* input_array, vector<double>* target_array);

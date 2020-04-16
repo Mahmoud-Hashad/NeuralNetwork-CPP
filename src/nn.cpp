@@ -15,7 +15,7 @@ public:
 
 
 
-NeuralNetwork::NeuralNetwork(unsigned int in_nodes,unsigned int hid_nodes, unsigned int out_nodes, double learning_rate)
+NeuralNetwork::NeuralNetwork(unsigned int in_nodes,unsigned int hid_nodes, unsigned int out_nodes)
 {
   this->input_nodes = in_nodes;
   this->hidden_nodes = hid_nodes;
@@ -34,7 +34,7 @@ NeuralNetwork::NeuralNetwork(unsigned int in_nodes,unsigned int hid_nodes, unsig
   this->bias_h->randomize();
   this->bias_o->randomize();
 
-  this->setLearnRate(learning_rate);
+  this->setLearnRate();
 
 }
 

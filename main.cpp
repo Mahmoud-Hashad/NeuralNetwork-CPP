@@ -1,13 +1,12 @@
 #include <iostream>
-#include "matrix.h"
 #include "nn.h"
-#include <time.h>
+
 
 using namespace std;
 
 int main()
 {
-    NeuralNetwork* test = new NeuralNetwork(8, 14, 3, 0.01);
+    NeuralNetwork* nn = new NeuralNetwork(8, 14, 3);
     vector<vector<double>> inputs = {
       {0, 0, 0, 0, 0, 0, 0, 1},
       {0, 0, 0, 0, 0, 0, 1, 0},
@@ -28,13 +27,14 @@ int main()
       {1, 1, 0},
       {1, 1, 1},
     };
-    srand(time(0));
+
+
     for(unsigned int i = 0; i < 10000; i++) {
       int t_index = i % 8;
-      test->train(&inputs[t_index], &outputs[t_index]);
+      nn->train(&inputs[t_index], &outputs[t_index]);
     }
 
-    vector<vector<double>> data = {
+    vector<vector<double>> test_array = {
       {0, 0, 0, 0, 0, 0, 0, 1},
       {0, 0, 0, 0, 0, 0, 1, 0},
       {0, 0, 0, 0, 0, 1, 0, 0},
@@ -45,9 +45,12 @@ int main()
       {1, 0, 0, 0, 0, 0, 0, 0}
     };
 
-    for(auto d : data) {
-      vector<double>* t = test->predict(&d);
-      cout << t->at(0) << " " << t->at(1) << " " << t->at(2) << " " << endl;
+    for(auto test : test_array) {
+      vector<double>* t = nn->predict(&test);
+      for(int i = 0; i < t->size(); i++) {
+        cout << t->at(i) << " ";
+      }
+      cout << endl;
       delete t;
     }
 
