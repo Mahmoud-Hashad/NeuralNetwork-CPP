@@ -1,0 +1,8 @@
+#ifndef DIGITALLOGIC_HPP_INCLUDED
+#define DIGITALLOGIC_HPP_INCLUDED
+
+
+void DigitalLogic();
+
+
+#endif // DIGITALLOGIC_HPP_INCLUDED
