@@ -6,12 +6,12 @@ A basic neural network for cpp.
   - [Neural Networks - The Nature of Code](https://www.youtube.com/watch?v=XJ7HLz9VYz0&list=PLRqwX-V7Uu6aCibgK1PTWWu9by6XFdCfh) playlist.
   
 
-
-
-### Example to solve this table of Encoder in Digital Logic
+## Examples:
+> ### - Digit recognition usning mnist dataset [here](https://github.com/Mahmoud-Hashad/NeuralNetwork-CPP/blob/master/DigitRecognition.cpp).
+> ### - Solving this table of Encoder in Digital Logic [here](https://github.com/Mahmoud-Hashad/NeuralNetwork-CPP/blob/master/DigitalLogic.cpp).
 ![Encoder in Digital Logic 8 input table](https://media.geeksforgeeks.org/wp-content/uploads/truth-table-8x3-encoder.jpg)
 
-main.cpp
+cpp
 ``` cpp
 NeuralNetwork* nn = new NeuralNetwork(8, 14, 3);
 vector<vector<double>> inputs = {
