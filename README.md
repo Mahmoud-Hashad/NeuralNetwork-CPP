@@ -7,8 +7,8 @@ A basic neural network for cpp.
   
 
 ## Examples:
-> ### - Digit recognition usning mnist dataset [here](https://github.com/Mahmoud-Hashad/NeuralNetwork-CPP/blob/master/DigitRecognition.cpp).
-> ### - Solving this table of Encoder in Digital Logic [here](https://github.com/Mahmoud-Hashad/NeuralNetwork-CPP/blob/master/DigitalLogic.cpp).
+- #### Digit recognition usning mnist dataset [here](https://github.com/Mahmoud-Hashad/NeuralNetwork-CPP/blob/master/DigitRecognition.cpp).
+- ####  Solving this table of Encoder in Digital Logic [here](https://github.com/Mahmoud-Hashad/NeuralNetwork-CPP/blob/master/DigitalLogic.cpp).
 ![Encoder in Digital Logic 8 input table](https://media.geeksforgeeks.org/wp-content/uploads/truth-table-8x3-encoder.jpg)
 
 cpp
